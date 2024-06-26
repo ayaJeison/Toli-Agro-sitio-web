@@ -189,6 +189,8 @@ document.getElementById('formulario').addEventListener('submit', function(event)
       alert('Hubo un error al enviar el formulario');
     });
   });
+
+// El codigo presente en esta hoja de scripts fue elaborado por Jeison Aya de Andrómeda crea, en colaboración para el proyecto ToliAgro
   
 
 

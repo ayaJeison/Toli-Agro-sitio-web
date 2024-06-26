@@ -114,3 +114,7 @@ function vaciar() {
     localStorage.removeItem('pedido');
     location.reload();
 }
+
+// El codigo presente en esta hoja de scripts fue elaborado por Jeison Aya de Andrómeda crea, en colaboración para el proyecto ToliAgro
+  
+
