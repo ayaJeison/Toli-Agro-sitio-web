@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="es-CO">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toliagro | Compra lo de nuestra tierra, apoya el campo Tolimense</title>
+    <!--Ojo creen una descripción diferente para cada sitio web, no importa si realizan un texto
+    usando IA lo importante es generar un texto que hable del contenido que se encontará de la página
+    ejemplo "Crea un texto para la metadescripción de un sitio web el cual haga enfoque acerca de un sitio que
+    (temática del sitio)"-->
+    <meta name="description"
+        content="Toli Agro es un sitio web creado por Andromeda crea y la Universidad cooperativa de Colombia">
+
+
+    <meta name="og:title"
+        content="Toliagro | Compra lo de nuestra tierra, apoya el campo Tolimense">
+    <meta name="og:description"
+        content="Toli Agro es un sitio web creado por Andromeda crea y la Universidad cooperativa de Colombia">
+    <meta name="og:type" content="website">
+    <meta name="og:url" content="www.toliagro.andromedacrea.com">
+    <meta name="og:image" content="/isotipo.png">
+
+    <link rel="shortcut icon" href="./imagenes/isotipo.png" type="image/png">
+
+    <link rel="stylesheet" href="estilos.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+</head>
+
+<body>
+    <!-- Encabezado del sitio web -->
+    <header>
+        <div class="logo">
+            <!-- Aquí deben colocar un logotipo, fondo transparente
+              en formato .png o .svg o .webp lo ideal es que no pese más de 80kb
+               si es necesario utilizar una herramienta para comprimir imagenes en línea, deben quitar este 
+               div de clase logo y colocar uma etiqueta img -->
+            Logo
+        </div>
+        <nav class="navegador" id="navegador">
+            <ul>
+                <li onclick="menu()"><a class="links" href="#inicio">Inicio</a></li>
+                <li onclick="menu()">
+                    <a class="links" href="#nosotros">Nosotros <!--<i class="bi bi-chevron-down"></i>--></a>
+                    <!-- <ol>
+                        <li onclick="menu(); window.location.href='#nosotros'">Misión</li>
+                        <li onclick="menu(); window.location.href='#nosotros'">Visión</li>
+                    </ol> -->
+                </li>
+                <li onclick="menu()"><a class="links" href="#productos">Productos</a></li>
+                <li onclick="menu()"><a class="links" href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+
+        <div class="carrito">
+            <a href="#resumend" class="links2"><i class="bi bi-cart3"></i></a>
+            <span id="cantidad"></span>
+        </div>
+
+        <label class="burger" for="burger">
+            <input onchange="menu(this.checked)" type="checkbox" id="burger">
+            <span class="navbar"></span>
+            <span class="navbar"></span>
+            <span class="navbar"></span>
+        </label>
+    </header>
+
+    <!-- Cuerpo del sitio web -->
+    <main>
+        <section class="inicio contenedor" id="inicio">
+            <div class="fondo">
+                <!-- En cada etiqueta img deben agregar una imagen diferente, estas
+                     imagenes son para el slider de la pantalla principal, lo ideal es que las
+                     imagenes no pesen más de 300kb cada una -->
+                <img id="cambio" src="./imagenes/fondo.jpg" alt="">
+                <img src="./imagenes/fondo2.jpg" alt="">
+                <img src="./imagenes/fondo3.jpg" alt="">
+            </div>
+            <div class="visi">
+                <h1>¡Juntos <span class="color-verde">cultivamos</span>, juntos avanzamos!</h1>
+                <p>Productos orgánicos de calidad, frescos y lo más importante <strong>"de nuestra tierra"</strong></p>
+                <div class="botones">
+                    <a href="#productos" class="btn btn-primary">Productos <i class="bi bi-cart3"></i></a>
+                    <a href="tel:+573170721473" class="btn btn-secondary">Contáctanos <i class="bi bi-telephone"></i></a>
+                </div>
+            </div>
+            <div class="slider">
+                <i class="desc" id="descripcion"> <!--Aquí aparecerá la descripción desde javascript--> </i>
+                <div class="navigation">
+
+                    <div id="activo1" class="active"></div>
+                    <div id="activo2"></div>
+                    <div id="activo3"></div>
+                </div>
+            </div>
+        </section>
+        <section class="nosotros contenedor" id="nosotros">
+            <h2>Nosotros</h2>
+            <div class="container-texto">
+                <div>
+                    <h3><span class="color-verde">Misión</span></h3>
+                    <p>Nuestra misión es proporcionar productos
+                        agrícolas de alta calidad, cultivados con prácticas
+                        sostenibles, para satisfacer las necesidades de nuestros clientes, mientras apoyamos el
+                        bienestar de nuestras comunidades rurales y preservamos el medio ambiente.
+                    </p>
+                </div>
+                <div>
+                    <h3><span class="color-verde">Visión</span></h3>
+                    <p>
+                        Aspiramos a ser líderes en la agricultura sostenible,
+                        creando un modelo de negocio que integra tecnología innovadora,
+                        prácticas ecológicas y desarrollo comunitario,
+                        para construir un futuro más próspero y saludable para todos.
+                    </p>
+                </div>
+            </div>
+        </section>
+        <div onclick="window.location.href=`https://wa.me/573170721473/?text=Quiero%20información`" class="whatsapp"
+            id="whatsapp">
+            <i class="bi bi-whatsapp"></i>
+        </div>
+        <section class="productos contenedor" id="productos">
+            <div class="resumen-de-cuenta" id="resumend">
+                <h3>Resumen de compra</h3>
+                <p>Aquí encontrarás el resumen de los elementos que has agregado a tu carrito</p>
+                <ul id="resumenc">
+
+                </ul>
+
+                <div class="total">
+                    <span>Total</span>
+                    <h3 id="total">$0</h3>
+                </div>
+                <button onclick="generarEnlaceWhatsApp()" style="width: 100%;" class="btn btn-primary">Pagar <i
+                        class="bi bi-cash"></i></button>
+                <button onclick="vaciar()" style="width: 100%; margin-top: 15px;" class="btn">Vaciar carrito <i
+                        class="bi bi-trash3"></i></button>
+
+            </div>
+            <div class="prod">
+                <h2>Productos</h2>
+                <ul>
+                    
+                    <li>
+                        <img src="./imagenes/productos/limon.jpg" alt="">
+                        <h3>Libra de limón</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$5.000</h4>
+                        <button onclick="agregar({nombre:'Libra de limón', valor:5000})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <img src="./imagenes/productos/naranja.jpg" alt="">
+                        <h3>Libra de naranjas</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$5.000</h4>
+                        <button onclick="agregar({nombre:'Libra de naranja', valor:5000})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <img src="./imagenes/productos/banano.jpg" alt="">
+                        <h3>Libra de banano</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$7.000</h4>
+                        <button onclick="agregar({nombre:'Libra de banano', valor:7000})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <img src="./imagenes/productos/cebolla.jpg" alt="">
+                        <h3>Libra de cebolla roja</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$6.000</h4>
+                        <button onclick="agregar({nombre:'Libra de cebolla roja', valor:6000})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+                    <li>
+                        <img src="./imagenes/productos/lechuga.jpg" alt="">
+                        <h3>Libra de lechuga</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$3.500</h4>
+                        <button onclick="agregar({nombre:'Libra de lechuga', valor:3500})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+
+                    <li>
+                        <img src="./imagenes/productos/tomate.jpg" alt="">
+                        <h3>Libra de tomate</h3>
+                        <p>Descripción del producto, se requiere descripción corta</p>
+                        <h4>$5.000</h4>
+                        <button onclick="agregar({nombre:'Libra de tomate', valor:5000})" class="btnd btn">
+                            Agregar <i class="bi bi-cart3"></i>
+                        </button>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="contacto contenedor" id="contacto">
+            <div class="container-form">
+                <h2>Contáctanos</h2>
+                <p>Déjanos tus datos y te contactaremos</p>
+
+                <form id="formulario">
+                    <input required type="text" id="nombre" name="nombre" class="input" placeholder="Escribe tu nombre">
+                    <input required type="email" id="correo" name="correo" class="input" placeholder="Escribe tu correo">
+                    <input required type="tel" id="telefono" name="telefono" class="input" placeholder="Escribe tu teléfono">
+                    <textarea required id="comentario" name="mensaje" style="height: 80px;" placeholder="Déjanos un mensaje"></textarea>
+
+                    <button type="submit" style="width: 100%;" class="btn btn-primary">
+                        Enviar datos <i class="bi bi-send"></i>
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+    <footer class="footer">
+        <div class="infor">
+            <div>
+                <strong>Información</strong>
+                <p>info@toliagro.com</p>
+                <p>(+57) 233 567 8901</p>
+                <p>Calle 4, Ciudad Ibague</p>
+            </div>
+            <div>
+                <strong>Siguenos</strong>
+                <p><a href=""><i class="bi bi-facebook"></i></a> <a href=""><i class="bi bi-instagram"></i></a> <a
+                        href=""><i class="bi bi-tiktok"></i></a></p>
+            </div>
+            <div>
+                <strong>Otros enlaces</strong>
+                <p>politicas de privacidad</p>
+                <p>Uso de datos</p>
+                <p>Uso de cookies</p>
+            </div>
+        </div>
+        <div class="derechos">
+            <p>Toli Agro, 2024. Todos los derechos reservados</p>
+            Elaborado por <a style="color: white;" href="https://andromedacrea.com">Jeison, de Andrómeda Crea</a> && <a
+                style="color: white;" href="https://ucc.edu.co/">Universidad Cooperativa de Colombia</a>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+    <script src="carrito.js"></script>
+</body>
+
+</html>
